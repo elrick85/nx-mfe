@@ -44,6 +44,12 @@
           "env": "NX_MF_DEV_SERVER_STATIC_REMOTES"
         }
       ]
+    },
+    "nx-release-publish": {
+      "dependsOn": ["^build"],
+      "options": {
+        "packageRoot": "dist/libs/{projectName}"
+      }
     }
   },
   "namedInputs": {
@@ -81,6 +87,12 @@
   "useInferencePlugins": false,
   "defaultBase": "master",
   "release": {
-    "projects": ["libs/theme"]
+    "projects": ["libs/theme", "libs/ui"],
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/libs/{projectName}",
+        "currentVersionResolver": "registry"
+      }
+    }
   }
 }

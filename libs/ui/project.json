@@ -1,7 +1,7 @@
 {
-  "name": "theme-1",
+  "name": "ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/theme-1/src",
+  "sourceRoot": "libs/ui/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -12,16 +12,16 @@
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/theme-1",
-        "tsConfig": "libs/theme-1/tsconfig.lib.json",
-        "project": "libs/theme-1/package.json",
-        "entryFile": "libs/theme-1/src/index.ts",
+        "outputPath": "dist/libs/ui",
+        "tsConfig": "libs/ui/tsconfig.lib.json",
+        "project": "libs/ui/package.json",
+        "entryFile": "libs/ui/src/index.ts",
         "external": ["react", "react-dom", "react/jsx-runtime"],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
           {
-            "glob": "libs/theme-1/README.md",
+            "glob": "libs/ui/README.md",
             "input": ".",
             "output": "."
           }
