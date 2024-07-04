@@ -1,7 +1,8 @@
-import React, { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import { createRouter } from "./router";
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import { createRouter } from './router';
+import { MyThemeProvider } from '@elrick85/theme';
 
 const mount = ({
   mountPoint,
@@ -12,16 +13,18 @@ const mount = ({
 }) => {
   const router = createRouter(initialPathname);
   const root = createRoot(mountPoint);
-  console.log('AAAAAAAAAA', mountPoint, initialPathname, root)
+  
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <MyThemeProvider>
+        <RouterProvider router={router} />
+      </MyThemeProvider>
     </StrictMode>
   );
 
   return () => {
-    console.log('Destroy')
-    queueMicrotask(() => root.unmount())
+    console.log('Destroy');
+    queueMicrotask(() => root.unmount());
   };
 };
 
