@@ -1,1 +1,1 @@
-export * from './lib/theme-1';
+export * from './lib/ui';

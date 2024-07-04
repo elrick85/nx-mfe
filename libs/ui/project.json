@@ -5,9 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
     "build": {
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
@@ -16,7 +13,7 @@
         "tsConfig": "libs/ui/tsconfig.lib.json",
         "project": "libs/ui/package.json",
         "entryFile": "libs/ui/src/index.ts",
-        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "external": ["react", "react-dom", "react/jsx-runtime", "@mui/material", "@elrick85/theme"],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [

@@ -1,7 +1,5 @@
-import * as React from 'react';
-// import Checkbox from '@mui/material/Checkbox';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import { orange } from '@mui/material/colors';
+import { createTheme } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface Theme {
@@ -17,14 +15,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-// const CustomCheckbox = styled(Checkbox)(({ theme }) => ({
-//   color: theme.status.danger,
-//   '&.Mui-checked': {
-//     color: theme.status.danger,
-//   },
-// }));
-
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       light: '#757ce8',
@@ -43,11 +34,3 @@ const theme = createTheme({
     danger: orange[500],
   },
 });
-
-export const MyThemeProvider: React.FC<React.PropsWithChildren> = ({children}) => {
-  return (
-    <ThemeProvider theme={theme}>
-      {children}
-    </ThemeProvider>
-  );
-}
