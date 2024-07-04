@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@elrick85/theme": ["libs/theme/src/index.ts"],
       "app1/Module": ["apps/app1/src/remote-entry.ts"],
       "app2/Module": ["apps/app2/src/remote-entry.ts"]
     }
