@@ -1,24 +1,27 @@
 {
-  "name": "theme",
+  "name": "theme-1",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/theme/src",
+  "sourceRoot": "libs/theme-1/src",
   "projectType": "library",
   "tags": [],
   "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
     "build": {
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/theme",
-        "tsConfig": "libs/theme/tsconfig.lib.json",
-        "project": "libs/theme/package.json",
-        "entryFile": "libs/theme/src/index.ts",
-        "external": ["react", "react-dom", "react/jsx-runtime", "@mui/material"],
+        "outputPath": "dist/libs/theme-1",
+        "tsConfig": "libs/theme-1/tsconfig.lib.json",
+        "project": "libs/theme-1/package.json",
+        "entryFile": "libs/theme-1/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
           {
-            "glob": "libs/theme/README.md",
+            "glob": "libs/theme-1/README.md",
             "input": ".",
             "output": "."
           }
